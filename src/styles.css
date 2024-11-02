@@ -4,6 +4,52 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-top-right-radius: 3em;
+  border-bottom-left-radius: 3em;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-item {
+  min-width: 10%;
+  flex: 0 0 auto;
+}
+
+.carousel img {
+  width: 3em;
+  height: auto;
+  display: block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+    /* Défile sur deux fois la largeur de la piste */
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 @tailwind base;
 @tailwind components;
