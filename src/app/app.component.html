@@ -31,6 +31,10 @@
           Télécharger CV
         </button>
 
+        <!-- <lord-icon src="https://cdn.lordicon.com/twsqddew.json" trigger="loop" stroke="light"
+          style="width:50px;height:50px">
+        </lord-icon> -->
+
       </div>
       <button data-collapse-toggle="navbar-solid-bg" type="button"
         class="inline-flex items-center justify-center w-8 h-8 p-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -97,7 +101,7 @@
 
   </div>
 
-  <img class="absolute image-2 w-36 left-5" src="img/souris-dev.png" alt="">
+  <img class="absolute image-2 w-36 left-5 md:w-36" src="img/souris-dev.png" alt="">
   <img class="absolute image-1 bottom-10 right-5" src="img/dev-img1.png" alt="">
 
   <svg class="absolute w-10 h-10 text-gray-800 dark:text-white image-3" aria-hidden="true"
@@ -115,8 +119,8 @@
       clip-rule="evenodd" />
   </svg>
 
-  <svg class="absolute w-10 h-10 text-gray-800 dark:text-white image-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-    width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <svg class="absolute w-10 h-10 text-gray-800 dark:text-white image-4" aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
 
     <defs>
       <linearGradient id="gradient-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -128,9 +132,6 @@
     <path stroke="url(#gradient-stroke)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14" />
   </svg>
-
-
-
 
 </section>
 
@@ -345,8 +346,8 @@
     </div>
 
     <div class="flex flex-wrap items-center justify-center gap-4 py-4 md:py-8">
-      <button type="button" class="tab-button" [ngClass]="{ 'active': selectedCategory === 'web' }"
-        (click)="selectCategory('web')">Dev web</button>
+      <button [disabled]="isButtonDisabled" type="button" class="tab-button"
+        [ngClass]="{ 'active': selectedCategory === 'web' }" (click)="selectCategory('web')">Dev web</button>
       <button type="button" class="tab-button" [ngClass]="{ 'active': selectedCategory === 'mobile' }"
         (click)="selectCategory('mobile')">Dev mobile</button>
       <button type="button" class="tab-button" [ngClass]="{ 'active': selectedCategory === 'design' }"
@@ -365,7 +366,6 @@
 
   </div>
 </section>
-
 
 
 <!-- Footer -->

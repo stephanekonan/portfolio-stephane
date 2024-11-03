@@ -22,6 +22,7 @@ export class AppComponent {
   title = 'stephane-dev-profil';
   email = 'stephanekonan@gmail.com';
   isCopied = false;
+  isButtonDisabled: boolean = true;
 
   images = [
     { img: 'img/angular_gradient.png' },
@@ -39,7 +40,7 @@ export class AppComponent {
     { img: 'img/ae.png' }
   ];
 
-  selectedCategory: string = 'web';
+  selectedCategory: string = 'mobile';
 
   selectCategory(category: string): void {
     this.selectedCategory = category;
