@@ -1,15 +1,20 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FlowbiteService } from '../services/flowbite.service';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
+import { WebComponent } from './contenus/web/web.component';
+import { DesignComponent } from './contenus/design/design.component';
+import { MobileComponent } from './contenus/mobile/mobile.component';
+import { VideoComponent } from './contenus/video/video.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, WebComponent, DesignComponent, MobileComponent, VideoComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
   @ViewChild('header') header: ElementRef | undefined;
@@ -33,6 +38,12 @@ export class AppComponent {
     { img: 'img/ai.png' },
     { img: 'img/ae.png' }
   ];
+
+  selectedCategory: string = 'web';
+
+  selectCategory(category: string): void {
+    this.selectedCategory = category;
+  }
 
   constructor(private flowbiteService: FlowbiteService) { }
 

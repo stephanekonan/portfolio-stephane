@@ -1,0 +1,7 @@
+<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-3">
+  <div *ngFor="let video of videos">
+    <iframe [src]="getVideoUrl(video)" width="500" height="300" class="w-full h-auto rounded-lg" frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
